@@ -15,7 +15,7 @@ public class Calculator {
         Scanner input = new Scanner(System.in);
 
         // price
-        System.out.print("What's the total price of your product?\n$");
+        System.out.print("What's the total price of your product? (in USD)\n$");
         double price = input.nextDouble();
 
         // boost
@@ -26,11 +26,8 @@ public class Calculator {
         System.out.print("\nWhat's the tax amount? (in percent)\n");
         double tax = input.nextDouble();
 
-        double savings = ((1 + (tax/100)) * price) * (1 - (1 - (boost/100))); // =((1 + tax/100) * price) * (1 - (1 - boost/100))
+        double savings = ((1 + (tax/100)) * price) * (1 - (1 - (boost/100))); // formula: =((1 + tax/100) * price) * (1 - (1 - boost/100))
         double roundedSavings = Math.round(savings * DECIMALROUNDER) / DECIMALROUNDER;
         System.out.println("\nSavings: $" + roundedSavings);
-
-
-
     }
 }
